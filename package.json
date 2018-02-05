@@ -1,0 +1,15 @@
+{
+  "name": "gulp-quick-start",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp"
+  },
+  "keywords": [],
+  "author": "halo <haloislet@gmail.com> (https://github.com/haloislet)",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
