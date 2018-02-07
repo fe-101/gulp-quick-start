@@ -1,4 +1,4 @@
-gulp 快速入门 ![](https://img.shields.io/github/license/mashape/apistatus.svg) 
+gulp 快速入门 ![](https://img.shields.io/npm/l/whistle.svg?style=flat-square) 
 === 
 
 > 基于流的自动化构建工具
