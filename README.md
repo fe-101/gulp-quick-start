@@ -66,6 +66,7 @@ $ npm run dev
 使用 src 方法读取文件，然后使用 dest 方法输出文件。
 ```javascript
 var gulp=require('gulp');
+
 gulp.task('copy-index',function(){
   gulp.src('index.html').pipe(gulp.dest('dest'));
 });
@@ -81,6 +82,7 @@ gulp.task('copy-index',function(){
 - 设置排除的文件，可以使用`!`。例如`!package.json`
 ```javascript
 var gulp=require('gulp');
+
 gulp.task('copy-images',function(){
   gulp.src('images/*.jpg').pipe(gulp.dest('dest/images'));
 });
