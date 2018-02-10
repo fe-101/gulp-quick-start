@@ -64,7 +64,7 @@ $ npm run dev
 
 ### 复制文件
 使用 src 方法读取文件，然后使用 dest 方法输出文件。
-```
+```javascript
 var gulp=require('gulp');
 gulp.task('copy-index',function(){
   gulp.src('index.html').pipe(gulp.dest('dest'));
