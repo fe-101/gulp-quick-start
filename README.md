@@ -7,6 +7,9 @@ gulp 快速入门 ![](https://img.shields.io/npm/l/whistle.svg?style=flat-square
 
 - [API](#api)
 - [gulp 的使用](#gulp-的使用)
+    - [复制文件](#复制文件)
+    - [复制多个文件](#复制多个文件)
+    - [插件使用](#插件使用)
 - [常用插件](#常用插件)
 
 <!-- /TOC -->
@@ -55,6 +58,53 @@ gulp.task('default', function() {
 4. gulp 默认执行的任务为 default 任务，所以我们直接使用 `gulp` 命令便可以执行 gulpfile.js 中的 default 任务
 ```
 $ npm run dev
+```
+
+<br>
+
+### 复制文件
+使用 src 方法读取文件，然后使用 dest 方法输出文件。
+```
+var gulp=require('gulp');
+gulp.task('copy-index',function(){
+  gulp.src('index.html').pipe(gulp.dest('dest'));
+});
+```
+
+<br>
+
+### 复制多个文件
+- 可以使用匹配符来处理多个文件
+- `images/**/*`表示images下的所有文件(包括所有子目录)
+- `images/*.{png,jpg}`表示images下面的所有png和jpg文件
+- 也可以使用数组，例如`['xml/*.xml','json/*.json']`
+- 设置排除的文件，可以使用`!`。例如`!package.json`
+```javascript
+var gulp=require('gulp');
+gulp.task('copy-images',function(){
+  gulp.src('images/*.jpg').pipe(gulp.dest('dest/images'));
+});
+```
+
+<br>
+
+### 插件使用
+例如 sass 编译工具
+
+首先安装插件 gulp-sass
+```
+$ npm install gulp-sass --save-dev
+```
+然后在 pipe 方法中调用插件
+
+```javascript
+var gulp=require('gulp');
+var sass=require('gulp-sass');
+gulp.task('sass',function(){
+  gulp.src('stylesheets/**/*.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('dest/css'))
+});
 ```
 
 <br>
